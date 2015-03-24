@@ -4,4 +4,4 @@
   connection: local
 
   tasks:
-    - include: tasks/ssh.yml
+    - include: tasks/dotfiles.yml

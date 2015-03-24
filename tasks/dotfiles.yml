@@ -1,0 +1,4 @@
+---
+
+- name: synchronizing dotfiles
+  synchronize: src=files/dotfiles/ dest=~/
