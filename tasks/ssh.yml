@@ -1,0 +1,10 @@
+---
+
+- name: copy ~/ssh/config
+  copy: src=files/ssh/.config dest=~/.ssh/config mode=0600 force=yes
+
+- name: copy ~/ssh/id_rsa.pub
+  copy: src=files/ssh/id_rsa.pub dest=~/.ssh/id_rsa.pub mode=0600 force=yes
+
+- name: copy ~/ssh/id_rsa
+  copy: src=files/ssh/id_rsa dest=~/.ssh/id_rsa mode=0600 force=yes
