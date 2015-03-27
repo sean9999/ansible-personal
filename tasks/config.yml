@@ -1,4 +1,4 @@
 ---
 
 - name: run OSX configuration script
-  script: files/osx/osx.sh
+  script: files/config/config.sh
