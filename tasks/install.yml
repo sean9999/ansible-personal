@@ -2,6 +2,14 @@
 
 - name: installing pip items
   pip: name={{ item }}
-  sudo: True
+  sudo: yes
   with_items:
     - virtualenv
+
+- name: installing easy_install items
+  easy_install: name=brew
+
+- name: installing brew items
+  homebrew: name={{ item }}
+  with_items:
+    - htop
