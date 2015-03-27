@@ -2,5 +2,6 @@
 
 - name: installing pip items
   pip: name={{ item }}
+  sudo: True
   with_items:
     - virtualenv
