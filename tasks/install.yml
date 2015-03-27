@@ -1,0 +1,6 @@
+---
+
+- name: installing pip items
+  pip: name={{ item }}
+  with_items:
+    - virtualenv

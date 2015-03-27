@@ -5,4 +5,5 @@
 
   tasks:
     - include: tasks/dotfiles.yml
+    - include: tasks/install.yml
     - include: tasks/config.yml
