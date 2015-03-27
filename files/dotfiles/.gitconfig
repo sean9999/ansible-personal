@@ -1,0 +1,8 @@
+[user]
+    name = David Hoffman
+    email = dhoffman34@icloud.com
+[push]
+    default = simple
+[core]
+    excludesfiles = /Users/dhoffman/.gitignore_global
+    excludesfile = /Users/dhoffman/.gitignore_global
