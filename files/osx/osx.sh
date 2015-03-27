@@ -3,15 +3,20 @@
 # Mouse, trackpad
 
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerHorizSwipeGesture -int 0
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerVertSwipeGesture -int 0
-defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -int 1
 
 # Terminal
 
 osascript <<EOD
 
 tell application "Terminal"
-    set default settings to settings set "Homebrew"
+    local allOpenedWindows
+
+    set themeName to "Homebrew"
+    set default settings to settings set themeName
+    set allOpenedWindows to id of every window
+
+    repeat with windowID in allOpenedWindows
+         set current settings of tabs of (every window whose id is windowID) to settings set themeName
+    end repeat
 end tell
 EOD
