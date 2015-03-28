@@ -7,3 +7,4 @@
     - include: tasks/dotfiles.yml
     - include: tasks/install.yml
     - include: tasks/config.yml
+    - include: tasks/bittorrent-sync.yml

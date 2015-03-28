@@ -1,0 +1,7 @@
+---
+
+- name: installing bittorrent-sync
+  homebrew_cask: name=bittorrent-sync
+
+- name: creating bittorrent-sync directory
+  file: state=directory path=/Users/dhoffman/synced mode=0700
