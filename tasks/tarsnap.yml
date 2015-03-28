@@ -1,0 +1,14 @@
+---
+
+- name: installing tarsnap
+  homebrew: name=tarsnap
+
+- name: creating tarsnap directory
+  file: path=/Users/dhoffman/tarsnap state=directory mode='0700'
+
+- name: copy tarsnap config file
+  copy: src=files/tarsnap/tarsnap.conf dest=/usr/local/etc/tarsnap.conf mode='0644'
+
+- name: generating tarsnap key file
+  shell: echo {{ tarsnap_password }} | tarsnap-keygen --keyfile /Users/dhoffman/tarsnap/tarsnap.key --user dhoffman34@icloud.com --machine {{ ansible_hostname }}
+           creates=/Users/dhoffman/tarsnap/tarsnap.key
