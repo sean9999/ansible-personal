@@ -1,0 +1,4 @@
+---
+
+- name: creating ~/tmp directory
+  file: path=/Users/dhoffman/tmp state=directory mode='0700'

@@ -1,0 +1,21 @@
+---
+
+- name: checking to see if keepassx is installed
+  stat: path=/Users/dhoffman/Applications/KeePassX.app
+  register: keepassx
+
+- name: getting keepassx
+  get_url: url=https://www.keepassx.org/releases/KeePassX-0.4.3.dmg dest=/Users/dhoffman/tmp
+  when: not keepassx.stat.exists
+
+- name: mounting keepassx
+  command: hdiutil attach /Users/dhoffman/tmp/KeePassX-0.4.3.dmg
+  when: not keepassx.stat.exists
+
+- name: installing keepassx
+  command: cp -R /Volumes/KeePassX-0.4.3/KeePassX.app/ /Users/dhoffman/Applications/KeePassX.app
+  when: not keepassx.stat.exists
+
+- name: unmounting keepassx
+  command: hdiutil detach /Volumes/KeePassX-0.4.3
+  when: not keepassx.stat.exists
