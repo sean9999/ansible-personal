@@ -5,11 +5,29 @@
   sudo: yes
   with_items:
     - virtualenv
+    - virtualenvwrapper
 
 - name: installing easy_install items
   easy_install: name=brew
+
+- name: install brew cask
+  command: brew install caskroom/cask/brew-cask creates=/usr/local/Cellar/brew-cask
 
 - name: installing brew items
   homebrew: name={{ item }}
   with_items:
     - htop
+    - tree
+
+- name: installing brew cask items
+  homebrew_cask: name={{ item }}
+  with_items:
+    - adium
+    - dbvisualizer
+    - firefox
+    - flux
+    - google-chrome
+    - java
+    - keepassx
+    - pycharm
+
