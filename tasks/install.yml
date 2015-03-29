@@ -7,9 +7,6 @@
     - virtualenv
     - virtualenvwrapper
 
-- name: installing easy_install items
-  easy_install: name=brew
-
 - name: install brew cask
   command: brew install caskroom/cask/brew-cask creates=/usr/local/Cellar/brew-cask
 
