@@ -17,4 +17,4 @@
          creates=/Users/dhoffman/tarsnap/tarsnap.key
 
 - name: setting up cron job
-  cron: minute="0" hour="3" job="/Users/dhoffman/bin/tarsnap.sh"
+  cron: name='create tarsnap archive' minute='0' hour='3' job='/Users/dhoffman/bin/tarsnap.sh'
