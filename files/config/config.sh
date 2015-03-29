@@ -4,6 +4,10 @@
 
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
+# Dock
+
+defaults write com.apple.dock autohide -bool true
+
 # Terminal
 
 osascript <<EOD
