@@ -13,5 +13,5 @@
     - include: tasks/config.yml
     - include: tasks/bittorrent-sync.yml
     - include: tasks/tarsnap.yml
-      when: ansible_hostname == 'Davids-Mac-Mini'
+      when: ansible_hostname == 'Davids-Mac-mini'
     - include: tasks/keepassx.yml
