@@ -23,6 +23,7 @@
   homebrew_cask: name={{ item }}
   with_items:
     - adium
+    - bittorrent-sync
     - dbvisualizer
     - firefox
     - flash
