@@ -1,4 +1,7 @@
 ---
 
-- name: creating ~/tmp directory
-  file: path=/Users/dhoffman/tmp state=directory mode='0700'
+- name: creating directories
+  file: path={{ item }} state=directory mode='0700'
+  with_items:
+    - /Users/dhoffman/tmp
+    - /Users/dhoffman/bin

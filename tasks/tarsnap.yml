@@ -6,9 +6,15 @@
 - name: creating tarsnap directory
   file: path=/Users/dhoffman/tarsnap state=directory mode='0700'
 
-- name: copy tarsnap config file
+- name: copying tarsnap config file
   copy: src=files/tarsnap/tarsnap.conf dest=/usr/local/etc/tarsnap.conf mode='0644'
+
+- name: copying tarsnap.sh
+  copy: src=files/tarsnap/tarsnap.sh dest=/Users/dhoffman/bin/tarsnap.sh mode='0700'
 
 - name: generating tarsnap key file
   shell: echo {{ tarsnap_password }} | tarsnap-keygen --keyfile /Users/dhoffman/tarsnap/tarsnap.key --user dhoffman34@icloud.com --machine {{ ansible_hostname }}
-           creates=/Users/dhoffman/tarsnap/tarsnap.key
+         creates=/Users/dhoffman/tarsnap/tarsnap.key
+
+- name: setting up cron job
+  cron: minute="0" hour="3" job="/Users/dhoffman/bin/tarsnap.sh"
