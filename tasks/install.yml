@@ -16,10 +16,14 @@
     - htop
     - tree
 
+- name: installing emacs
+  homebrew: name=emacs options=cocoa
+
 - name: installing brew cask items
   homebrew_cask: name={{ item }}
   with_items:
     - adium
+    - bittorrent-sync
     - dbvisualizer
     - firefox
     - flash
