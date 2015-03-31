@@ -13,6 +13,7 @@
 - name: installing brew items
   homebrew: name={{ item }}
   with_items:
+    - go
     - htop
     - tree
 
