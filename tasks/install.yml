@@ -15,6 +15,7 @@
   with_items:
     - go
     - htop
+    - python3
     - tree
 
 - name: installing emacs
