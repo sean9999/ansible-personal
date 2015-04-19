@@ -7,8 +7,11 @@
     - virtualenv
     - virtualenvwrapper
 
-- name: install brew cask
+- name: installing brew cask
   command: brew install caskroom/cask/brew-cask creates=/usr/local/Cellar/brew-cask
+
+- name: updating brew and brew packages
+  homebrew: update_homebrew=yes upgrade_all=yes
 
 - name: installing brew items
   homebrew: name={{ item }}
@@ -16,7 +19,6 @@
     - go
     - htop
     - python3
-    - transmission
     - tree
 
 - name: installing emacs
@@ -32,5 +34,6 @@
     - flash
     - flux
     - google-chrome
+    - transmission
     - java
     - pycharm
